@@ -89,7 +89,7 @@ nav a:hover {
 }
 
 .button {
-  background-color: #e11e04;
+  background-color: #e21f05;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -113,8 +113,29 @@ form button {
 }
 
 footer {
-  background-color: #c9301f;
+  background-color: #da2b18;
   color: white;
   text-align: center;
   padding: 20px;
 }
+
+.about-content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.about-content img {
+  width: 45%;
+  max-width: 400px;
+  height: auto;
+}
+
+.about-content p {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
