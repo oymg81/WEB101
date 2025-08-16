@@ -139,3 +139,40 @@ footer {
   color: #333;
 }
 
+.about-card .about-content {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-card img {
+  width: 45%;
+  max-width: 400px;
+  border-radius: 5px;
+}
+
+.about-card p {
+  width: 50%;
+  text-align: justify;
+  color: #c9301f;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-card .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-card img,
+  .about-card p {
+    width: 100%;
+  }
+
+  .about-card p {
+    padding: 0 10px;
+  }
+}
+
