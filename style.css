@@ -145,32 +145,32 @@ footer { background-color: #da2b18; color: #fff; text-align: center; padding: 20
   box-shadow: 0 0 0 3px rgba(218,43,24,.15);
 }
 
-/* === Radios: alineación exacta (columna fija para el círculo) === */
+/* Radios perfectamente alineados */
 .signup-card .radio-group{
-  margin: 12px 0 18px;
   display: grid;
   gap: 12px;
+  margin: 12px 0 20px;
 }
 
 .signup-card .radio-item{
-  display: grid;
-  grid-template-columns: 18px 1fr; /* 18px para el radio, resto para el texto */
-  align-items: center;             /* centra verticalmente */
-  column-gap: 10px;
+  display: inline-flex;        /* el label mismo es el contenedor */
+  align-items: center;
+  gap: 10px;
+  line-height: 1.2;
+  cursor: pointer;
+  margin: 0;
 }
 
 .signup-card .radio-item input[type="radio"]{
+  flex: 0 0 auto;
   width: 16px;
   height: 16px;
   margin: 0;
-  align-self: center;
   accent-color: #da2b18;
-  vertical-align: middle;
 }
 
-.signup-card .radio-item label{
-  margin: 0;
-  line-height: 1.2;
+.signup-card .radio-item span{
+  flex: 1 1 auto;  /* el texto ocupa el resto en línea */
 }
 
 
