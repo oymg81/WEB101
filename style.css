@@ -60,27 +60,30 @@ nav a:hover {
 
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.85); /* fondo oscuro */
-  padding: 50px 80px;                   /* más grande */
-  text-align: center;
-  border-radius: 10px;
-  max-width: 800px;                     /* opcional: limita ancho */
-  width: 100%;
   position: relative;
   z-index: 2;
+  text-align: center;
+  padding: 0;         /* elimina relleno extra */
+  background: none;   /* elimina fondo negro */
+  border-radius: 0;
+  max-width: none;
 }
 
 .hero h1 {
-  font-size: 4rem;  /* antes era 3rem */
+  font-size: 5rem;        /* agranda el título */
   margin: 0;
-  color: #f44336;
+  color: #f44336;         /* rojo vibrante */
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* mejora contraste si lo deseas */
 }
 
 .hero h2 {
-  font-size: 2.5rem;  /* antes era 2rem */
-  margin: 0;
+  font-size: 3rem;        /* subtítulo más grande */
+  margin: 10px 0 0;
   color: #eeeeee;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
 }
+
 
 /* CONTAINER & CARDS */
 .container {
