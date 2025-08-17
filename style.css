@@ -249,3 +249,35 @@ footer {
 input:invalid {
   border: 2px solid #ff5e5e;
 }
+
+.testimonials-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.testimonial {
+  flex: 1 1 30%;
+  background-color: transparent;
+  padding: 10px;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #ffeeba;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    flex-direction: column;
+  }
+}
