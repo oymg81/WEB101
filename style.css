@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
   background: #ffffff;
+  color: #111;
 }
 
 /* =========================
@@ -26,7 +27,7 @@ nav {
   z-index: 100;
 }
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   margin-left: 20px;
   font-weight: bold;
@@ -45,13 +46,12 @@ nav a:hover {
   background-position: center;
   height: 400px;
   position: relative;
+  background-color: #da2b18; /* fallback para evitar “blanco” */
 }
 .hero::before {
-  content: none;
+  content: none; /* pon "" si quieres overlay oscuro */
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-color: rgba(93, 89, 89, 0.6);
   z-index: 1;
 }
@@ -95,8 +95,9 @@ nav a:hover {
   max-width: 1200px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(40px);
+  /* Si no usas el IntersectionObserver, deja visibles: */
+  opacity: 1;
+  transform: none;
   transition: all 0.6s ease-in-out;
 }
 .card.visible {
@@ -109,7 +110,7 @@ nav a:hover {
 ========================= */
 .button {
   background-color: #da2b18;
-  color: white;
+  color: #fff;
   padding: 10px 20px;
   border: none;
   text-decoration: none;
@@ -127,8 +128,9 @@ img {
 
 /* =========================
    FORMS (genéricos)
+   Importante: NO aplicar width:100% a radios/checkboxes
 ========================= */
-form input,
+form input:not([type="radio"]):not([type="checkbox"]),
 form button {
   width: 100%;
   padding: 10px;
@@ -142,7 +144,7 @@ form button {
 ========================= */
 footer {
   background-color: #da2b18;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 20px;
 }
@@ -153,7 +155,7 @@ footer {
 .about-card {
   width: 100%;
   padding: 60px 40px;
-  background-color: white;
+  background-color: #fff;
   box-sizing: border-box;
 }
 .about-card h2 {
@@ -174,6 +176,7 @@ footer {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
 }
 .about-text {
   flex: 1;
@@ -184,176 +187,13 @@ footer {
 }
 
 /* =========================
-   RESPONSIVE global
+   SIGNUP SECTION (franja roja)
 ========================= */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .about-content img,
-  .about-text {
-    width: 100%;
-  }
-  .about-text {
-    padding-top: 20px;
-  }
-}
-
-/* ==========================================================
-   *** FOOTER ROJO: layout de dos columnas (texto + formulario)
-   Importante: los selectores usan data-attributes de Wix/EditorX
-   y los IDs exactos que aparecen en tu captura.
-   Si el builder cambia los IDs (#comp-...), actualízalos aquí.
-========================================================== */
-
-/* Contenedor interno del footer en modo fila */
-[data-mesh-id="SITE_FOOTERinlineContent"]
-  [data-mesh-id="SITE_FOOTERinlineContent-gridContainer"] {
-  display: flex !important;
-  justify-content: space-between !important; /* separa texto y form */
-  align-items: flex-start !important;        /* alinea arriba */
-  flex-wrap: wrap !important;                /* se apila en móvil */
-  gap: 40px !important;
-  padding: 40px !important;
-}
-
-/* Columna izquierda (testimonios / direcciones) */
-#comp-m0684gfu {
-  flex: 1 1 auto !important;
-  min-width: 280px !important;
-}
-
-/* Columna derecha (FORM: tarjeta a la derecha) */
-#comp-m0684gf5 {
-  flex: 0 0 380px !important;   /* ancho fijo del form */
-  max-width: 100% !important;
-  background: #fff !important;
-  color: #111 !important;
-  padding: 20px !important;
-  border-radius: 12px !important;
-  box-shadow: 0 6px 20px rgba(0,0,0,.15) !important;
-}
-
-/* Responsive: apilar y centrar el form en pantallas chicas */
-@media (max-width: 900px){
-  [data-mesh-id="SITE_FOOTERinlineContent"]
-    [data-mesh-id="SITE_FOOTERinlineContent-gridContainer"]{
-    flex-direction: column !important;
-  }
-  #comp-m0684gf5{
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-}
-
-/* ====== FONDO ROJO DEL BLOQUE ====== */
-#SITE_FOOTER,
-[data-mesh-id="SITE_FOOTERinlineContent"]{
-  background:#da2b18 !important; /* rojo de marca */
-}
-
-/* Altura cómoda del bloque rojo */
-[data-mesh-id="SITE_FOOTERinlineContent"]
-  [data-mesh-id="SITE_FOOTERinlineContent-gridContainer"]{
-  min-height: 560px !important;   /* ajusta si necesitas más/menos alto */
-}
-
-/* ====== LAYOUT: texto izq + form der ====== */
-[data-mesh-id="SITE_FOOTERinlineContent"]
-  [data-mesh-id="SITE_FOOTERinlineContent-gridContainer"]{
-  display:flex !important;
-  justify-content:space-between !important;
-  align-items:flex-start !important;
-  gap:40px !important;
-  padding:48px 40px !important;
-  flex-wrap:wrap !important;      /* apila en móvil */
-}
-
-/* Columna izquierda (texto/testimonios/direcciones) */
-#comp-m0684gfu{
-  flex:1 1 auto !important;
-  min-width:280px !important;
-  color:#fff !important;
-}
-
-/* ====== TARJETA DEL FORM PEQUEÑA ====== */
-/* IMPORTANTE: si el ID del form cambia en tu editor, reemplaza #comp-m0684gf5 por el nuevo ID */
-#comp-m0684gf5{
-  flex:0 0 420px !important;   /* ancho fijo tipo "card" */
-  width:420px !important;
-  max-width:100% !important;
-  background:#fff !important;
-  color:#111 !important;
-  padding:28px !important;
-  border-radius:16px !important;
-  box-shadow:0 14px 40px rgba(0,0,0,.18) !important;
-}
-
-/* Títulos del form en color marca */
-#comp-m0684gf5 :is(h1,h2,h3){
-  color:#da2b18 !important;
-  letter-spacing:.5px;
-  margin-top:0;
-}
-
-/* ====== ESTILO COMPACTO DE CAMPOS ====== */
-#comp-m0684gf5 input[type="text"],
-#comp-m0684gf5 input[type="email"],
-#comp-m0684gf5 input[type="tel"],
-#comp-m0684gf5 select,
-#comp-m0684gf5 textarea{
-  height:42px !important;
-  padding:8px 14px !important;
-  border:2px solid #da2b18 !important;
-  border-radius:9999px !important;     /* pill */
-  outline:none !important;
-  box-shadow:none !important;
-}
-
-/* Radios/checkbox en línea compactos (opcional) */
-#comp-m0684gf5 .radiogroup,
-#comp-m0684gf5 .checkboxgroup{
-  display:grid !important;
-  gap:8px !important;
-}
-
-/* Botón */
-#comp-m0684gf5 button,
-#comp-m0684gf5 input[type="submit"]{
-  height:44px !important;
-  border:none !important;
-  border-radius:9999px !important;
-  background:#da2b18 !important;
-  color:#fff !important;
-  font-weight:600;
-  cursor:pointer;
-}
-#comp-m0684gf5 button:hover,
-#comp-m0684gf5 input[type="submit"]:hover{
-  filter:brightness(1.05);
-}
-
-/* ====== Responsive: apilar y centrar el form en móvil ====== */
-@media (max-width: 900px){
-  [data-mesh-id="SITE_FOOTERinlineContent"]
-    [data-mesh-id="SITE_FOOTERinlineContent-gridContainer"]{
-    flex-direction:column !important;
-  }
-  #comp-m0684gf5{
-    width:100% !important;
-    max-width:480px !important;
-    margin:0 auto !important;
-  }
-}
-
-/* ====== SIGNUP SECTION ====== */
 .signup-section {
-  background: #da2b18; /* rojo de marca */
+  background: #da2b18;
   color: #fff;
   padding: 60px 40px;
 }
-
 .signup-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -363,7 +203,6 @@ footer {
   gap: 40px;
   flex-wrap: wrap; /* apila en móvil */
 }
-
 /* Columna izquierda (texto) */
 .signup-text {
   flex: 1 1 500px;
@@ -371,7 +210,6 @@ footer {
   font-size: 1rem;
   line-height: 1.6;
 }
-
 /* Tarjeta del form */
 .signup-card {
   flex: 0 0 380px;
@@ -381,29 +219,44 @@ footer {
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,.15);
 }
+.signup-card h2 { margin-top: 0; color: #111; }
 
-/* Estilo de campos */
-.signup-card input,
-.signup-card button {
+/* Campos (excluye radios/checkboxes) */
+.signup-card input:not([type="radio"]):not([type="checkbox"]),
+.signup-card select,
+.signup-card textarea {
   width: 100%;
+  font-size: 1rem;
   padding: 10px;
   margin: 10px 0 15px;
-  font-size: 1rem;
-}
-
-.signup-card input {
   border: 2px solid #da2b18;
-  border-radius: 9999px; /* pill style */
+  border-radius: 9999px; /* pill */
+  outline: none;
+  background: #fff;
 }
+.signup-card textarea { border-radius: 16px; height: 120px; }
 
+/* Radios: alineación limpia */
 .signup-card .radio-group {
   display: grid;
   gap: 8px;
   margin-bottom: 15px;
 }
+.signup-card .radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.2;
+}
+.signup-card input[type="radio"] {
+  width: auto;
+  margin: 0;
+  accent-color: #da2b18; /* color de marca */
+}
 
-/* Botón */
+/* Botón del form */
 .signup-card .button {
+  width: 100%;
   border: none;
   border-radius: 9999px;
   background: #da2b18;
@@ -411,55 +264,16 @@ footer {
   font-weight: 600;
   cursor: pointer;
 }
-.signup-card .button:hover {
-  filter: brightness(1.05);
-}
+.signup-card .button:hover { filter: brightness(1.05); }
 
-/* Responsive */
+/* =========================
+   RESPONSIVE global
+========================= */
 @media (max-width: 900px) {
-  .signup-container {
-    flex-direction: column;
-  }
+  .signup-container { flex-direction: column; }
   .signup-card {
     width: 100%;
     max-width: 480px;
     margin: 20px auto 0;
   }
 }
-
-/* 1) Evitar que radios/checkboxes hereden width:100% */
-form input[type="radio"],
-form input[type="checkbox"]{
-  width: auto !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  display: inline-block;
-}
-
-/* 2) Alinear texto y círculo en una misma línea */
-.signup-card .radio-group label{
-  display: flex;
-  align-items: center;
-  gap: 8px;          /* espacio entre el círculo y el texto */
-  line-height: 1.2;
-}
-
-/* 3) Color de marca para radios (navegadores modernos) */
-.signup-card input[type="radio"]{
-  accent-color: #c9301f;
-}
-
-/* (Opcional) Si quieres que las tres opciones queden en columna fija */
-.signup-card .radio-group{
-  display: grid;
-  gap: 8px;
-}
-
-/* (Opcional) Si las prefieres en dos columnas, usa este en lugar del de arriba */
-/*
-.signup-card .radio-group{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 16px;
-}
-*/
