@@ -1,119 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Logisti-K Freight Innovation Day - A logistics event showcasing technology and services.">
-  <title>Logisti-K Freight Innovation Day</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Logisti-K Freight Innovation Day - A logistics event showcasing technology and services.">
+    <title>Logisti-K Freight Innovation Day</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div><strong>Logisti-K.us</strong></div>
-    <div>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#signup">Sign In</a>
-    </div>
-  </nav>
-
-  <!-- Hero Banner -->
-  <section class="hero" id="home"></section>
-
-  <!-- MAIN CONTENT -->
-  <div class="container">
-    <div class="card">
-      <h2>Event Highlights</h2>
-      <ul>
-        <li>Live demo of freight tracking system</li>
-        <li>Workshops on international shipping logistics</li>
-        <li>Career booth for tech & logistics students</li>
-      </ul>
-    </div>
-
-    <div class="card about-card" id="about">
-      <h2>About Us</h2>
-      <div class="about-content">
-        <img src="Chancay.jpg" alt="Port of Chancay - Peru" />
-        <div class="about-text">
-          <p>
-            Logisti-k is a Miami-based freight forwarding company specializing in cargo transportation services.
-            Our mission is to provide unique and efficient solutions to manufacturers and courier agencies,
-            focusing on offering integrated logistics services. With a commitment to excellence and customer satisfaction,
-            we ensure seamless logistics and timely deliveries for all your shipping needs.
-          </p>
-          <p>
-            We’re not just freight forwarders—we’re your logistics partners. From port to warehouse, from paperwork to the
-            final mile, our team ensures your cargo moves seamlessly, safely, and on time. We pride ourselves on industry
-            knowledge, responsiveness, and a customer-first approach.
-          </p>
+    <!-- Navigation -->
+    <nav>
+        <div><strong>Logisti-K.us</strong></div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#signup">Sign In</a>
         </div>
-      </div>
-    </div>
-  </div> <!-- End of .container -->
+    </nav>
 
-  <!-- TESTIMONIALS + SIGNUP FORM -->
-  <section id="testimonial-section">
-    <h2>Testimonials</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <p>“As a manufacturer, I have been using Logisti-k.us for over a year. Their services are reliable, efficient, and cost-effective. I highly recommend them for all your freight forwarding requirements.”</p>
-        <span>Joyce L. @Wyyu</span>
-      </div>
+    <!-- Hero Banner -->
+    <section class="hero" id="home"></section>
 
-      <div class="testimonial">
-        <p>“Logisti-k.us has been instrumental in streamlining our shipping processes. Their attention to detail and customer service are exceptional. We are extremely satisfied with their services.”</p>
-        <span>Randy M. @ Encompass Supply S.</span>
-      </div>
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="card">
+            <h2>Event Highlights</h2>
+            <ul>
+                <li>Live demo of freight tracking system</li>
+                <li>Workshops on international shipping logistics</li>
+                <li>Career booth for tech & logistics students</li>
+            </ul>
+        </div>
 
-      <div class="testimonial">
-        <p>“I have been working with Logisti-k.us for several projects, and they have consistently exceeded my expectations. Their dedication to meeting deadlines and ensuring safe deliveries is commendable.”</p>
-        <span>Andrea @ JMC Envíos</span>
-      </div>
-    </div>
+        <div class="card about-card" id="about">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <img src="Chancay.jpg" alt="Port of Chancay - Peru" />
+                <div class="about-text">
+                    <p>
+                        Logisti-k is a Miami-based freight forwarding company specializing in cargo transportation
+                        services.
+                        Our mission is to provide unique and efficient solutions to manufacturers and courier agencies,
+                        focusing on offering integrated logistics services. With a commitment to excellence and customer
+                        satisfaction,
+                        we ensure seamless logistics and timely deliveries for all your shipping needs.
+                    </p>
+                    <p>
+                        We’re not just freight forwarders—we’re your logistics partners. From port to warehouse, from
+                        paperwork to the
+                        final mile, our team ensures your cargo moves seamlessly, safely, and on time. We pride
+                        ourselves on industry
+                        knowledge, responsiveness, and a customer-first approach.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End of .container -->
 
     <!-- Sign Up Form -->
     <div class="signup" id="signup">
-      <h2>Sign Up Now!</h2>
-      <form>
-        <label for="fname">First Name:</label>
-        <input type="text" id="fname" name="fname" required>
+        <h2>Sign Up Now!</h2>
+        <form id="signupForm">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
 
-        <label for="lname">Last Name:</label>
-        <input type="text" id="lname" name="lname" required>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-        <label for="weight">Cargo Weight:</label><br>
-        <input type="radio" name="weight" value="less" /> Less than 150kg<br>
-        <input type="radio" name="weight" value="more" /> More than 150kg<br>
-        <input type="radio" name="weight" value="other" /> Other<br><br>
+            <label for="weight">Cargo Weight:</label><br>
+            <input type="radio" name="weight" value="less" required /> Less than 150kg<br>
+            <input type="radio" name="weight" value="more" /> More than 150kg<br>
+            <input type="radio" name="weight" value="other" /> Other<br><br>
 
-        <button type="submit" class="button">Submit</button>
-      </form>
+            <button type="submit" class="button">Submit</button>
+        </form>
+
+        <div id="casilleroResult" style="margin-top: 20px; font-size: 1.2rem; font-weight: bold;"></div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>Logisti-k Freight Services — Miami FL | Peru | All Rights Reserved</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <p>Logisti-k Freight Services — Miami FL | Peru | All Rights Reserved</p>
+    </footer>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
-    document.querySelectorAll('.card').forEach(card => {
-      observer.observe(card);
-    });
-  </script>
+    <!-- JS -->
+    <script>
+        let currentNumber = 1001;
+
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const year = new Date().getFullYear().toString().slice(-2); // "25"
+            const casillero = `LTK${year}${currentNumber}`;
+
+            document.getElementById('casilleroResult').textContent = `Your Casillero Number: ${casillero}`;
+            currentNumber++;
+
+            this.reset(); // optional: clear form
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
+
 </html>

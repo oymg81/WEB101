@@ -1,16 +1,15 @@
+
 /* GENERAL */
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: #ffffff;
 }
-
 /* NAVBAR */
 nav {
   background-color: #c9301f;
@@ -22,19 +21,16 @@ nav {
   top: 0;
   z-index: 100;
 }
-
 nav a {
   color: white;
   text-decoration: none;
   margin-left: 20px;
   font-weight: bold;
 }
-
 nav a:hover {
   text-decoration: underline;
   color: #ffeeba;
 }
-
 /* HERO */
 .hero {
   background-image: url('logistic.png');
@@ -43,45 +39,37 @@ nav a:hover {
   height: 400px;
   position: relative;
 }
-
-
 .hero::before {
   content: none;
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(93, 89, 89, 0.6); /* opacidad ajustable */
+  background-color: rgba(93, 89, 89, 0.6);
   z-index: 1;
 }
-
-
 .hero-overlay {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 0;         /* elimina relleno extra */
-  background: none;   /* elimina fondo negro */
+  padding: 0;
+  background: none;
   border-radius: 0;
   max-width: none;
 }
-
 .hero h1 {
-  font-size: 5rem;        /* agranda el título */
+  font-size: 5rem;
   margin: 0;
-  color: #f44336;         /* rojo vibrante */
+  color: #f44336;
   font-weight: bold;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* mejora contraste si lo deseas */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
-
 .hero h2 {
-  font-size: 3rem;        /* subtítulo más grande */
+  font-size: 3rem;
   margin: 10px 0 0;
   color: #eeeeee;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
 }
-
-
 /* CONTAINER & CARDS */
 .container {
   display: flex;
@@ -89,7 +77,6 @@ nav a:hover {
   align-items: center;
   padding: 40px;
 }
-
 .card {
   background: #f4f4f4;
   padding: 25px;
@@ -102,12 +89,10 @@ nav a:hover {
   transform: translateY(40px);
   transition: all 0.6s ease-in-out;
 }
-
 .card.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 /* BUTTON */
 .button {
   background-color: #e21f05;
@@ -118,13 +103,11 @@ nav a:hover {
   border-radius: 5px;
   cursor: pointer;
 }
-
 /* IMAGES */
 img {
   width: 100%;
   border-radius: 5px;
 }
-
 /* FORMS */
 form input,
 form button {
@@ -134,7 +117,6 @@ form button {
   margin-bottom: 15px;
   font-size: 1rem;
 }
-
 /* FOOTER */
 footer {
   background-color: #da2b18;
@@ -142,7 +124,6 @@ footer {
   text-align: center;
   padding: 20px;
 }
-
 /* ABOUT US SECTION */
 .about-card {
   width: 100%;
@@ -150,13 +131,11 @@ footer {
   background-color: white;
   box-sizing: border-box;
 }
-
 .about-card h2 {
   font-size: 2.5rem;
   color: #c9301f;
   margin-bottom: 40px;
 }
-
 .about-content {
   display: flex;
   justify-content: space-between;
@@ -164,7 +143,6 @@ footer {
   gap: 40px;
   flex-wrap: wrap;
 }
-
 .about-content img {
   width: 50%;
   max-width: 600px;
@@ -172,7 +150,6 @@ footer {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
 .about-text {
   flex: 1;
   color: #c9301f;
@@ -180,104 +157,17 @@ footer {
   line-height: 1.7;
   text-align: justify;
 }
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
     text-align: center;
   }
-
   .about-content img,
   .about-text {
     width: 100%;
   }
-
   .about-text {
     padding-top: 20px;
-  }
-}
-
-
-#testimonial-section {
-  background-color: #c9301f;
-  color: white;
-  padding: 60px 40px;
-  box-sizing: border-box;
-}
-
-#testimonial-section h2 {
-  color: white;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-.testimonial-box,
-.signup-box {
-  margin-bottom: 50px;
-}
-
-#testimonial-section p,
-#testimonial-section label {
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-#testimonial-section input,
-#testimonial-section button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-}
-
-#testimonial-section button {
-  background-color: #fff;
-  color: #c9301f;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#testimonial-section button:hover {
-  background-color: #ffeeba;
-  color: #c9301f;
-}
-
-input:invalid {
-  border: 2px solid #ff5e5e;
-}
-
-.testimonials-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: space-between;
-  margin-bottom: 50px;
-}
-
-.testimonial {
-  flex: 1 1 30%;
-  background-color: transparent;
-  padding: 10px;
-  color: white;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.testimonial span {
-  display: block;
-  margin-top: 10px;
-  font-size: 0.9rem;
-  font-style: italic;
-  color: #ffeeba;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .testimonials-grid {
-    flex-direction: column;
   }
 }
