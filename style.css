@@ -75,21 +75,6 @@ nav a:hover { text-decoration: underline; color: #ffeeba; }
 img { width: 100%; border-radius: 5px; object-fit: cover; }
 
 /* =========================
-   FORMS (genéricos)
-   *Excluimos radios/checkboxes del 100%*
-========================= */
-form input:not([type="radio"]):not([type="checkbox"]),
-form button,
-form select,
-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  font-size: 1rem;
-}
-
-/* =========================
    FOOTER
 ========================= */
 footer { background-color: #da2b18; color: #fff; text-align: center; padding: 20px; }
@@ -123,17 +108,18 @@ footer { background-color: #da2b18; color: #fff; text-align: center; padding: 20
 }
 .signup-card h2 { margin-top: 0; color: #111; }
 
-/* Campos (excluye radios/checkboxes) */
+/* Inputs de texto, selects y textarea (NO radios/checkboxes) */
 .signup-card input:not([type="radio"]):not([type="checkbox"]),
 .signup-card select,
-.signup-card textarea {
+.signup-card textarea{
   width: 100%;
   font-size: 1rem;
   padding: 10px;
   margin: 10px 0 15px;
   border: 2px solid #da2b18;
   border-radius: 9999px; /* pill */
-  outline: none; background: #fff;
+  outline: none;
+  background: #fff;
 }
 .signup-card textarea { border-radius: 16px; height: 120px; }
 
@@ -151,16 +137,14 @@ footer { background-color: #da2b18; color: #fff; text-align: center; padding: 20
   gap: 12px;
   margin: 12px 0 20px;
 }
-
 .signup-card .radio-item{
-  display: inline-flex;        /* el label mismo es el contenedor */
+  display: inline-flex;        
   align-items: center;
   gap: 10px;
   line-height: 1.2;
   cursor: pointer;
   margin: 0;
 }
-
 .signup-card .radio-item input[type="radio"]{
   flex: 0 0 auto;
   width: 16px;
@@ -168,11 +152,9 @@ footer { background-color: #da2b18; color: #fff; text-align: center; padding: 20
   margin: 0;
   accent-color: #da2b18;
 }
-
 .signup-card .radio-item span{
-  flex: 1 1 auto;  /* el texto ocupa el resto en línea */
+  flex: 1 1 auto;
 }
-
 
 /* Botón dentro del formulario */
 .signup-card .button {
