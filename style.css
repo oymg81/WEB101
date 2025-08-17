@@ -54,7 +54,7 @@ nav a:hover {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* opacidad ajustable */
+  background-color: rgba(93, 89, 89, 0.6); /* opacidad ajustable */
   z-index: 1;
 }
 
