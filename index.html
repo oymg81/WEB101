@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Logisti-K Freight Innovation Day - A logistics event showcasing technology and services.">
+    <meta name="description" content="Logisti-K Freight Innovation Day - A logistics event showcasing technology and services.">
     <title>Logisti-K Freight Innovation Day</title>
     <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
     <!-- Navigation -->
     <nav>
         <div><strong>Logisti-K.us</strong></div>
@@ -23,11 +19,9 @@
         </div>
     </nav>
 
- <section class="hero" id="home"></section>
-
+    <section class="hero" id="home"></section>
 
     <div class="container">
-
         <div class="card">
             <h2>Event Highlights</h2>
             <ul>
@@ -40,55 +34,47 @@
         <div class="card about-card" id="about">
             <h2>About Us</h2>
             <div class="about-content">
-                <img src="lChancay.jpg" alt="Port of Chancay - Peru" />
+                <img src="logistics.png" alt="Port of Chancay - Peru" />
                 <div class="about-text">
                     <p>
-                        Logisti-k is a Miami-based freight forwarding company specializing in cargo transportation
-                        services.
+                        Logisti-k is a Miami-based freight forwarding company specializing in cargo transportation services.
                         Our mission is to provide unique and efficient solutions to manufacturers and courier agencies,
-                        focusing on offering integrated logistics services. With a commitment to excellence and customer
-                        satisfaction,
+                        focusing on offering integrated logistics services. With a commitment to excellence and customer satisfaction,
                         we ensure seamless logistics and timely deliveries for all your shipping needs.
                     </p>
                     <p>
-                        We’re not just freight forwarders—we’re your logistics partners. From port to warehouse, from
-                        paperwork to the
-                        final mile, our team ensures your cargo moves seamlessly, safely, and on time. We pride
-                        ourselves on industry
+                        We’re not just freight forwarders—we’re your logistics partners. From port to warehouse, from paperwork to the
+                        final mile, our team ensures your cargo moves seamlessly, safely, and on time. We pride ourselves on industry
                         knowledge, responsiveness, and a customer-first approach.
                     </p>
                 </div>
             </div>
         </div>
 
-
-        <div class="card" id="testimonials">
-            <h2>Testimonials</h2>
-            <p>"As a manufacturer, I have been using Logisti-k.us for over a year. Their services are reliable,
-                professional, and always on schedule."</p>
-        </div>
-
-        <div class="card" id="signup">
-            <h2>Sign Up Now!</h2>
-            <form>
-                <label for="fname">First Name:</label>
-                <input type="text" id="fname" name="fname" required>
-
-                <label for="lname">Last Name:</label>
-                <input type="text" id="lname" name="lname" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="weight">Cargo Weight:</label><br>
-                <input type="radio" name="weight" value="less" /> Less than 150kg<br>
-                <input type="radio" name="weight" value="more" /> More than 150kg<br>
-                <input type="radio" name="weight" value="other" /> Other<br><br>
-
-                <button type="submit" class="button">Submit</button>
-            </form>
-        </div>
-
+        <section id="testimonial-section">
+            <div class="testimonial-box">
+                <h2>Testimonials</h2>
+                <p>"As a manufacturer, I have been using Logisti-k.us for over a year. Their services are reliable,
+                    professional, and always on schedule."</p>
+            </div>
+            
+            <div class="signup" id="signup">
+                <h2>Sign Up Now!</h2>
+                <form>
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" required>
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="weight">Cargo Weight:</label><br>
+                    <input type="radio" name="weight" value="less" /> Less than 150kg<br>
+                    <input type="radio" name="weight" value="more" /> More than 150kg<br>
+                    <input type="radio" name="weight" value="other" /> Other<br><br>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+            </div>
+        </section>
     </div>
 
     <footer>
@@ -103,12 +89,9 @@
                 }
             });
         });
-
         document.querySelectorAll('.card').forEach(card => {
             observer.observe(card);
         });
     </script>
-
 </body>
-
 </html>

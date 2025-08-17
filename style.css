@@ -199,3 +199,53 @@ footer {
 }
 
 
+#testimonial-section {
+  background-color: #c9301f;
+  color: white;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+#testimonial-section h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.testimonial-box,
+.signup-box {
+  margin-bottom: 50px;
+}
+
+#testimonial-section p,
+#testimonial-section label {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+#testimonial-section input,
+#testimonial-section button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+#testimonial-section button {
+  background-color: #fff;
+  color: #c9301f;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#testimonial-section button:hover {
+  background-color: #ffeeba;
+  color: #c9301f;
+}
+
+input:invalid {
+  border: 2px solid #ff5e5e;
+}
