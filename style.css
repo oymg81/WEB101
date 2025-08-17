@@ -16,7 +16,7 @@ body {
    NAVBAR
 ========================= */
 nav {
-  background-color: #c9301f;
+  background-color: #da2b18;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,7 +67,7 @@ nav a:hover {
 .hero h1 {
   font-size: 5rem;
   margin: 0;
-  color: #f44336;
+  color: #da2b18;
   font-weight: bold;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
@@ -108,7 +108,7 @@ nav a:hover {
    BUTTON
 ========================= */
 .button {
-  background-color: #e21f05;
+  background-color: #da2b18;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -158,7 +158,7 @@ footer {
 }
 .about-card h2 {
   font-size: 2.5rem;
-  color: #c9301f;
+  color: #da2b18;
   margin-bottom: 40px;
 }
 .about-content {
@@ -177,7 +177,7 @@ footer {
 }
 .about-text {
   flex: 1;
-  color: #c9301f;
+  color: #da2b18;
   font-size: 1rem;
   line-height: 1.7;
   text-align: justify;
@@ -250,7 +250,7 @@ footer {
 /* ====== FONDO ROJO DEL BLOQUE ====== */
 #SITE_FOOTER,
 [data-mesh-id="SITE_FOOTERinlineContent"]{
-  background:#e24a2b !important; /* rojo de marca */
+  background:#da2b18 !important; /* rojo de marca */
 }
 
 /* Altura cómoda del bloque rojo */
@@ -292,7 +292,7 @@ footer {
 
 /* Títulos del form en color marca */
 #comp-m0684gf5 :is(h1,h2,h3){
-  color:#e24a2b !important;
+  color:#da2b18 !important;
   letter-spacing:.5px;
   margin-top:0;
 }
@@ -305,7 +305,7 @@ footer {
 #comp-m0684gf5 textarea{
   height:42px !important;
   padding:8px 14px !important;
-  border:2px solid #e24a2b !important;
+  border:2px solid #da2b18 !important;
   border-radius:9999px !important;     /* pill */
   outline:none !important;
   box-shadow:none !important;
@@ -324,7 +324,7 @@ footer {
   height:44px !important;
   border:none !important;
   border-radius:9999px !important;
-  background:#e24a2b !important;
+  background:#da2b18 !important;
   color:#fff !important;
   font-weight:600;
   cursor:pointer;
@@ -349,7 +349,7 @@ footer {
 
 /* ====== SIGNUP SECTION ====== */
 .signup-section {
-  background: #e24a2b; /* rojo de marca */
+  background: #da2b18; /* rojo de marca */
   color: #fff;
   padding: 60px 40px;
 }
@@ -406,7 +406,7 @@ footer {
 .signup-card .button {
   border: none;
   border-radius: 9999px;
-  background: #c9301f;
+  background: #da2b18;
   color: #fff;
   font-weight: 600;
   cursor: pointer;
