@@ -131,29 +131,28 @@ footer { background-color: #da2b18; color: #fff; text-align: center; padding: 20
   box-shadow: 0 0 0 3px rgba(218,43,24,.15);
 }
 
-/* Radios perfectamente alineados */
+/* Radios perfectamente alineados (corrigido para .radio-row) */
 .signup-card .radio-group{
   display: grid;
   gap: 12px;
   margin: 12px 0 20px;
 }
-.signup-card .radio-item{
-  display: inline-flex;        
+.signup-card .radio-row{
+  display: grid;
+  grid-template-columns: 20px 1fr;
   align-items: center;
-  gap: 10px;
-  line-height: 1.2;
-  cursor: pointer;
-  margin: 0;
+  column-gap: 10px;
 }
-.signup-card .radio-item input[type="radio"]{
-  flex: 0 0 auto;
+.signup-card .radio-row input[type="radio"]{
   width: 16px;
   height: 16px;
   margin: 0;
-  accent-color: #e62d19;
+  accent-color: #da2b18;
 }
-.signup-card .radio-item span{
-  flex: 1 1 auto;
+.signup-card .radio-row label{
+  margin: 0;
+  line-height: 1.2;
+  cursor: pointer;
 }
 
 /* Botón dentro del formulario */
@@ -162,6 +161,19 @@ footer { background-color: #da2b18; color: #fff; text-align: center; padding: 20
   background: #da2b18; color: #fff; font-weight: 600; cursor: pointer;
 }
 .signup-card .button:hover { filter: brightness(1.05); }
+
+/* =========================
+   PREVIEW / MENSAJES
+========================= */
+#casilleroResult { margin-top: 12px; font-weight: 700; }
+#nextPreview { margin-top: 6px; font-size: .95rem; color: #666; }
+
+/* =========================
+   ALERTAS
+========================= */
+.alert { padding:12px; border-radius:10px; margin:14px 0; display: none; }
+.alert-success { background:#e6ffed; border:1px solid #b7ffca; color:#0f5132; }
+.alert-error   { background:#fde2e1; border:1px solid #ffb3ae; color:#842029; }
 
 /* =========================
    RESPONSIVE
