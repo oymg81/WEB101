@@ -1,421 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logisti-K Freight Innovation Day</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Logisti-K Freight Innovation Day</title>
 
-    <style>
-        /* ====== BASE ====== */
-        * {
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<style>
+/* ====== BASE ====== */
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#111}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #fff;
-            color: #111;
-        }
+/* ====== NAV ====== */
+nav{
+  background:#da2b18;color:#fff;position:sticky;top:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;padding:10px 40px
+}
+nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:bold}
+nav a:hover{color:#ffeeba;text-decoration:underline}
 
-        /* ====== NAV ====== */
-        nav {
-            background: #c9301f;
-            color: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 40px;
-        }
+/* ====== HERO ====== */
+.hero{
+  height:400px;position:relative;
+  background:#da2b18 url('logistic.png') center/cover no-repeat;
+}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.25)}
+/* (si quieres texto encima del hero, añade aquí .hero > .content ... ) */
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        }
+/* ====== GENERAL CONTENT ====== */
+.container{display:flex;flex-direction:column;align-items:center;padding:40px}
+.card{
+  background:#f4f4f4;padding:25px;margin:20px;width:80%;max-width:1200px;
+  border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,.1)
+}
+.about-card h2{color:#da2b18;margin:0 0 20px}
+.about-content{display:flex;gap:40px;align-items:center;flex-wrap:wrap}
+.about-content img{
+  width:50%;max-width:600px;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);object-fit:cover
+}
+.about-text{flex:1;color:#da2b18;line-height:1.7;text-align:justify}
 
-        nav a:hover {
-            text-decoration: underline;
-            color: #ffeeba;
-        }
+/* ====== SIGNUP STRIP ====== */
+.signup-section{background:#da2b18;color:#fff;padding:60px 40px}
+.signup-container{
+  max-width:1200px;margin:0 auto;display:flex;gap:40px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap
+}
+.signup-text{flex:1 1 520px;min-width:280px}
 
-        /* ====== HERO ====== */
-        .hero {
-            height: 400px;
-            position: relative;
-            background-image: url('logistic.png');
-            /* si no existe, verás un fondo rojo */
-            background-size: cover;
-            background-position: center;
-            background-color: #c9301f;
-            /* fallback para que nunca se vea en blanco */
-        }
+/* form card */
+.signup-card{
+  flex:0 0 380px;width:380px;max-width:100%;
+  background:#fff;color:#111;padding:24px;border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15)
+}
+.signup-card h2{margin:0 0 14px}
 
-        /* ====== CARDS / ABOUT ====== */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px;
-        }
+/* inputs “pill” (NO radios/checkboxes) */
+.signup-card input:not([type="radio"]):not([type="checkbox"]),
+.signup-card select,.signup-card textarea{
+  width:100%;font-size:1rem;padding:10px;margin:10px 0 15px;
+  border:2px solid #da2b18;border-radius:9999px;outline:none;background:#fff
+}
+.signup-card textarea{border-radius:16px;height:120px}
+.signup-card input:focus,.signup-card select:focus,.signup-card textarea:focus{
+  border-color:#b9220f;box-shadow:0 0 0 3px rgba(218,43,24,.15)
+}
 
-        .card {
-            background: #f4f4f4;
-            padding: 25px;
-            margin: 20px;
-            width: 80%;
-            max-width: 1200px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-            opacity: 1;
-            transform: none;
-            /* visible por defecto */
-        }
+/* radios — alineación exacta (círculo | texto) */
+.radio-group{display:grid;gap:12px;margin:12px 0 20px}
+.radio-row{
+  display:grid;grid-template-columns:20px 1fr;align-items:center;column-gap:10px
+}
+.radio-row input[type="radio"]{width:16px;height:16px;margin:0;accent-color:#da2b18}
+.radio-row label{margin:0;line-height:1.2;cursor:pointer}
 
-        .about-card h2 {
-            font-size: 2rem;
-            color: #c9301f;
-            margin: 0 0 24px;
-        }
+/* button */
+.button{width:100%;border:none;border-radius:9999px;background:#da2b18;color:#fff;font-weight:600;padding:12px;cursor:pointer}
+.button:hover{filter:brightness(1.05)}
 
-        .about-content {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+/* preview text */
+#casilleroResult{margin-top:12px;font-weight:700}
+#nextPreview{margin-top:6px;font-size:.95rem;color:#666}
 
-        .about-content img {
-            width: 50%;
-            max-width: 600px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
-            object-fit: cover;
-            background: #eee;
-        }
+/* footer */
+footer{background:#da2b18;color:#fff;text-align:center;padding:20px}
 
-        .about-text {
-            flex: 1;
-            color: #c9301f;
-            line-height: 1.7;
-            text-align: justify;
-        }
-
-        /* ====== SIGNUP SECTION (franja roja) ====== */
-        .signup-section {
-            background: #c9301f;
-            color: #fff;
-            padding: 60px 40px;
-        }
-
-        .signup-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .signup-text {
-            flex: 1 1 520px;
-            min-width: 280px;
-        }
-
-        .signup-text h3 {
-            margin-top: 0;
-        }
-
-        /* Tarjeta del form a la derecha */
-        .signup-card {
-            flex: 0 0 380px;
-            width: 380px;
-            max-width: 100%;
-            background: #fff;
-            color: #111;
-            padding: 24px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
-        }
-
-        .signup-card h2 {
-            margin-top: 0;
-            color: #111;
-        }
-
-        /* Campos */
-        .signup-card input,
-        .signup-card button,
-        .signup-card select,
-        .signup-card textarea {
-            width: 100%;
-            font-size: 1rem;
-            padding: 10px;
-            margin: 10px 0 15px;
-        }
-
-        .signup-card input,
-        .signup-card select,
-        .signup-card textarea {
-            border: 2px solid #e24a2b;
-            border-radius: 9999px;
-            outline: none;
-            background: #fff;
-        }
-
-        .signup-card textarea {
-            border-radius: 16px;
-            height: 120px;
-        }
-
-        .signup-card .radio-group {
-            display: grid;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-
-        .signup-card .radio-group label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            line-height: 1.2;
-        }
-
-        .signup-card input[type="radio"] {
-            margin: 0;
-            accent-color: #c9301f;
-        }
-
-        .signup-card .button {
-            border: none;
-            border-radius: 9999px;
-            background: #c9301f;
-            color: #fff;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .signup-card .button:hover {
-            filter: brightness(1.05);
-        }
-
-        #casilleroResult {
-            margin-top: 12px;
-            font-size: 1.05rem;
-            font-weight: 700;
-        }
-
-        #nextPreview {
-            margin-top: 6px;
-            font-size: .95rem;
-            opacity: .8;
-        }
-
-        /* ====== FOOTER ====== */
-        footer {
-            background: #da2b18;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* ====== Responsive ====== */
-        @media (max-width: 900px) {
-            .signup-container {
-                flex-direction: column;
-            }
-
-            .signup-card {
-                width: 100%;
-                max-width: 480px;
-                margin: 20px auto 0;
-            }
-
-            .about-content {
-                flex-direction: column;
-            }
-
-            .about-content img,
-            .about-text {
-                width: 100%;
-            }
-        }
-    </style>
+/* responsive */
+@media (max-width:900px){
+  .signup-container{flex-direction:column}
+  .signup-card{width:100%;max-width:480px;margin:20px auto 0}
+  .about-content{flex-direction:column;text-align:center}
+  .about-content img,.about-text{width:100%}
+}
+</style>
 </head>
 
 <body>
-    <!-- NAV -->
-    <nav>
-        <div><strong>Logisti-K.us</strong></div>
-        <div>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#signup">Sign In</a>
-        </div>
-    </nav>
+  <!-- NAV -->
+  <nav>
+    <div><strong>Logisti-K.us</strong></div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#signup">Sign In</a>
+    </div>
+  </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="home"></section>
+  <!-- HERO -->
+  <section class="hero" id="home"></section>
 
-    <!-- CONTENT -->
-    <div class="container">
-        <div class="card">
-            <h2>Event Highlights</h2>
-            <ul>
-                <li>Live demo of freight tracking system</li>
-                <li>Workshops on international shipping logistics</li>
-                <li>Career booth for tech &amp; logistics students</li>
-            </ul>
-        </div>
-
-        <div class="card about-card" id="about">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <img src="Chancay.jpg" alt="Port of Chancay - Peru" />
-                <div class="about-text">
-                    <p>
-                        Logisti-k is a Miami-based freight forwarding company specializing in cargo transportation
-                        services.
-                        Our mission is to provide unique and efficient solutions to manufacturers and courier agencies,
-                        focusing on offering integrated logistics services. With a commitment to excellence and customer
-                        satisfaction, we ensure seamless logistics and timely deliveries for all your shipping needs.
-                    </p>
-                    <p>
-                        We’re not just freight forwarders—we’re your logistics partners. From port to warehouse, from
-                        paperwork to the final mile, our team ensures your cargo moves seamlessly, safely, and on time.
-                        We pride ourselves on industry knowledge, responsiveness, and a customer-first approach.
-                    </p>
-                </div>
-            </div>
-        </div>
+  <!-- CONTENT -->
+  <div class="container">
+    <div class="card">
+      <h2>Event Highlights</h2>
+      <ul>
+        <li>Live demo of freight tracking system</li>
+        <li>Workshops on international shipping logistics</li>
+        <li>Career booth for tech &amp; logistics students</li>
+      </ul>
     </div>
 
-    <!-- SIGNUP (franja roja) -->
-    <section class="signup-section" id="signup">
-        <div class="signup-container">
-
-            <!-- Lado izquierdo: texto promocional -->
-            <div class="signup-text">
-                <h3>Why Join Us?</h3>
-                <p>
-                    As a manufacturer, I have been using Logisti-k.us for my shipping needs for over a year.
-                    Their services are reliable and cost-effective.
-                </p>
-                <p>
-                    Our warehouses in Miami and Lima ensure your cargo moves fast and safely across borders.
-                </p>
-            </div>
-
-            <!-- Lado derecho: formulario -->
-            <div class="signup-card">
-                <h2>Sign Up Now!</h2>
-
-                <form id="signupForm" autocomplete="off">
-                    <label for="fname">First Name:</label>
-                    <input type="text" id="fname" name="fname" required aria-label="First Name" />
-
-                    <label for="lname">Last Name:</label>
-                    <input type="text" id="lname" name="lname" required aria-label="Last Name" />
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required aria-label="Email Address" />
-
-                    <label for="weight">Cargo Weight:</label>
-                    <div class="radio-group">
-                        <label class="radio-item">
-                            <input type="radio" name="weight" value="less" required>
-                            <span>Less than 150kg</span>
-                        </label>
-                        <label class="radio-item">
-                            <input type="radio" name="weight" value="more">
-                            <span>More than 150kg</span>
-                        </label>
-                        <label class="radio-item">
-                            <input type="radio" name="weight" value="other">
-                            <span>Other</span>
-                        </label>
-                    </div>
-
-
-                    <button type="submit" class="button">Submit</button>
-                </form>
-
-                <!-- Resultados del casillero generado -->
-                <div id="casilleroResult" style="margin-top: 15px; font-weight: bold;"></div>
-                <div id="nextPreview" style="margin-top: 5px; font-size: 0.9rem; color: #fff;"></div>
-            </div>
+    <div class="card about-card" id="about">
+      <h2>About Us</h2>
+      <div class="about-content">
+        <img src="Chancay.jpg" alt="Port of Chancay - Peru" />
+        <div class="about-text">
+          <p>
+            Logisti-K is a Miami-based freight forwarding company specializing in cargo transportation services. We deliver integrated logistics with a customer-first approach.
+          </p>
+          <p>
+            From port to warehouse, paperwork to final mile — we move your cargo safely and on time.
+          </p>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>Logisti-k Freight Services — Miami FL | Peru | All Rights Reserved</p>
-    </footer>
+  <!-- SIGNUP STRIP -->
+  <section class="signup-section" id="signup">
+    <div class="signup-container">
+      <div class="signup-text">
+        <h3>Why Join Us?</h3>
+        <p>“As a manufacturer, I’ve been using Logisti-k.us for over a year. They’re reliable and cost-effective.”</p>
+        <p>Our warehouses in Miami and Lima keep your cargo moving fast and safely across borders.</p>
+      </div>
 
-    <script>
-        /* ====== Casillero con localStorage: LTKYY1001, reinicio anual ====== */
-        const STORAGE_YEAR = 'lk_year';
-        const STORAGE_COUNTER = 'lk_counter';
-        const START_COUNTER = 1001;
+      <div class="signup-card">
+        <h2>Sign Up Now!</h2>
 
-        function loadState() {
-            const y = parseInt(localStorage.getItem(STORAGE_YEAR), 10);
-            const c = parseInt(localStorage.getItem(STORAGE_COUNTER), 10);
-            if (Number.isNaN(y) || Number.isNaN(c)) return null;
-            return { year: y, counter: c };
-        }
-        function saveState(year, counter) {
-            localStorage.setItem(STORAGE_YEAR, String(year));
-            localStorage.setItem(STORAGE_COUNTER, String(counter));
-        }
-        function initState() {
-            const nowYear = new Date().getFullYear();
-            const st = loadState();
-            if (!st || st.year !== nowYear) {
-                saveState(nowYear, START_COUNTER);
-                return { year: nowYear, counter: START_COUNTER };
-            }
-            return st;
-        }
-        function formatCasillero(year, counter) {
-            const shortYear = String(year).slice(-2);
-            return `LTK${shortYear}${counter}`;
-        }
-        function updatePreview() {
-            const st = initState();
-            const el = document.getElementById('nextPreview');
-            if (el) el.textContent = `Next casillero: ${formatCasillero(st.year, st.counter)}`;
-        }
+        <form id="signupForm" autocomplete="off">
+          <label for="fname">First Name:</label>
+          <input id="fname" name="fname" required />
 
-        let state = initState();
-        updatePreview();
+          <label for="lname">Last Name:</label>
+          <input id="lname" name="lname" required />
 
-        document.getElementById('signupForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+          <label for="email">Email:</label>
+          <input id="email" name="email" type="email" required />
 
-            const nowYear = new Date().getFullYear();
-            state = loadState() || { year: nowYear, counter: START_COUNTER };
-            if (nowYear !== state.year) { state.year = nowYear; state.counter = START_COUNTER; }
+          <label>Cargo Weight:</label>
+          <div class="radio-group">
+            <div class="radio-row">
+              <input id="w-less" type="radio" name="weight" value="less" required />
+              <label for="w-less">Less than 150kg</label>
+            </div>
+            <div class="radio-row">
+              <input id="w-more" type="radio" name="weight" value="more" />
+              <label for="w-more">More than 150kg</label>
+            </div>
+            <div class="radio-row">
+              <input id="w-other" type="radio" name="weight" value="other" />
+              <label for="w-other">Other</label>
+            </div>
+          </div>
 
-            const casillero = formatCasillero(state.year, state.counter);
-            document.getElementById('casilleroResult').textContent = `Your Casillero Number: ${casillero}`;
+          <button class="button" type="submit">Submit</button>
+        </form>
 
-            state.counter += 1;
-            saveState(state.year, state.counter);
-            this.reset();
-            updatePreview();
-        });
-    </script>
+        <div id="casilleroResult"></div>
+        <div id="nextPreview"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Logisti-K Freight Services — Miami FL | Peru | All Rights Reserved</p>
+  </footer>
+
+<script>
+/* ====== Casillero con localStorage: LTKYY1001 y reinicio anual ====== */
+const STORAGE_YEAR = 'lk_year';
+const STORAGE_COUNTER = 'lk_counter';
+const START_COUNTER = 1001;
+
+function loadState(){
+  const y = parseInt(localStorage.getItem(STORAGE_YEAR),10);
+  const c = parseInt(localStorage.getItem(STORAGE_COUNTER),10);
+  if(Number.isNaN(y) || Number.isNaN(c)) return null;
+  return {year:y, counter:c};
+}
+function saveState(year, counter){
+  localStorage.setItem(STORAGE_YEAR, String(year));
+  localStorage.setItem(STORAGE_COUNTER, String(counter));
+}
+function initState(){
+  const nowYear = new Date().getFullYear();
+  const st = loadState();
+  if(!st || st.year !== nowYear){
+    saveState(nowYear, START_COUNTER);
+    return {year: nowYear, counter: START_COUNTER};
+  }
+  return st;
+}
+function formatCasillero(year, counter){
+  const yy = String(year).slice(-2);
+  return `LTK${yy}${counter}`;
+}
+function updatePreview(){
+  const st = initState();
+  const el = document.getElementById('nextPreview');
+  if(el) el.textContent = `Next casillero: ${formatCasillero(st.year, st.counter)}`;
+}
+
+let state = initState();
+updatePreview();
+
+document.getElementById('signupForm').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const nowYear = new Date().getFullYear();
+  state = loadState() || {year: nowYear, counter: START_COUNTER};
+  if(nowYear !== state.year){ state.year = nowYear; state.counter = START_COUNTER; }
+
+  const casillero = formatCasillero(state.year, state.counter);
+  document.getElementById('casilleroResult').textContent = `Your Casillero Number: ${casillero}`;
+
+  state.counter += 1;
+  saveState(state.year, state.counter);
+
+  this.reset();
+  updatePreview();
+});
+</script>
 </body>
-
 </html>
