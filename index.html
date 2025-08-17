@@ -1,138 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Logisti-K Freight Innovation Day - A logistics event showcasing technology and services.">
-    <title>Logisti-K Freight Innovation Day</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Logisti-K Freight Innovation Day - A logistics event showcasing technology and services.">
+  <title>Logisti-K Freight Innovation Day</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Navigation -->
+  <nav>
+    <div><strong>Logisti-K.us</strong></div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#signup">Sign In</a>
+    </div>
+  </nav>
 
-    <!-- Navigation -->
-    <nav>
-        <div><strong>Logisti-K.us</strong></div>
-        <div>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#signup">Sign In</a>
-        </div>
-    </nav>
+  <!-- Hero Banner -->
+  <section class="hero" id="home"></section>
 
-    <!-- Hero Banner -->
-    <section class="hero" id="home"></section>
-
-    <!-- MAIN CONTENT -->
-    <div class="container">
-        <div class="card">
-            <h2>Event Highlights</h2>
-            <ul>
-                <li>Live demo of freight tracking system</li>
-                <li>Workshops on international shipping logistics</li>
-                <li>Career booth for tech & logistics students</li>
-            </ul>
-        </div>
-
-        <div class="card about-card" id="about">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <img src="Chancay.jpg" alt="Port of Chancay - Peru" />
-                <div class="about-text">
-                    <p>
-                        Logisti-k is a Miami-based freight forwarding company specializing in cargo transportation
-                        services.
-                        Our mission is to provide unique and efficient solutions to manufacturers and courier agencies,
-                        focusing on offering integrated logistics services. With a commitment to excellence and customer
-                        satisfaction,
-                        we ensure seamless logistics and timely deliveries for all your shipping needs.
-                    </p>
-                    <p>
-                        We’re not just freight forwarders—we’re your logistics partners. From port to warehouse, from
-                        paperwork to the
-                        final mile, our team ensures your cargo moves seamlessly, safely, and on time. We pride
-                        ourselves on industry
-                        knowledge, responsiveness, and a customer-first approach.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End of .container -->
-
-    <!-- Sign Up Form -->
-    <!-- Sign Up Section -->
-<section class="signup-section" id="signup">
-  <div class="signup-container">
-    <!-- Columna izquierda: testimonios / dirección -->
-    <div class="signup-text">
-      <h3>Why Join Us?</h3>
-      <p>As a manufacturer, I have been using Logisti-k.us for my shipping needs for over a year. Their services are reliable and cost-effective.</p>
-      <p>Our warehouses in Miami and Lima ensure your cargo moves fast and safely across borders.</p>
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <div class="card">
+      <h2>Event Highlights</h2>
+      <ul>
+        <li>Live demo of freight tracking system</li>
+        <li>Workshops on international shipping logistics</li>
+        <li>Career booth for tech & logistics students</li>
+      </ul>
     </div>
 
-    <!-- Columna derecha: tarjeta con el form -->
-    <div class="signup-card">
-      <h2>Sign Up Now!</h2>
-      <form id="signupForm">
-        <label for="fname">First Name:</label>
-        <input type="text" id="fname" name="fname" required>
-
-        <label for="lname">Last Name:</label>
-        <input type="text" id="lname" name="lname" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="weight">Cargo Weight:</label>
-        <div class="radio-group">
-          <label><input type="radio" name="weight" value="less" required> Less than 150kg</label>
-          <label><input type="radio" name="weight" value="more"> More than 150kg</label>
-          <label><input type="radio" name="weight" value="other"> Other</label>
+    <div class="card about-card" id="about">
+      <h2>About Us</h2>
+      <div class="about-content">
+        <img src="Chancay.jpg" alt="Port of Chancay - Peru" />
+        <div class="about-text">
+          <p>
+            Logisti-k is a Miami-based freight forwarding company specializing in cargo transportation services.
+            Our mission is to provide unique and efficient solutions to manufacturers and courier agencies,
+            focusing on offering integrated logistics services. With a commitment to excellence and customer
+            satisfaction, we ensure seamless logistics and timely deliveries for all your shipping needs.
+          </p>
+          <p>
+            We’re not just freight forwarders—we’re your logistics partners. From port to warehouse, from paperwork to the
+            final mile, our team ensures your cargo moves seamlessly, safely, and on time. We pride ourselves on industry
+            knowledge, responsiveness, and a customer-first approach.
+          </p>
         </div>
-
-        <button type="submit" class="button">Submit</button>
-      </form>
-      <div id="casilleroResult"></div>
+      </div>
     </div>
-  </div>
-</section>
+  </div> <!-- End of .container -->
 
-    <!-- Footer -->
-    <footer>
-        <p>Logisti-k Freight Services — Miami FL | Peru | All Rights Reserved</p>
-    </footer>
+  <!-- ===== Sign Up Section (franja roja con form pequeño a la derecha) ===== -->
+  <section class="signup-section" id="signup">
+    <div class="signup-container">
+      <!-- Columna izquierda: contenido -->
+      <div class="signup-text">
+        <h3>Why Join Us?</h3>
+        <p>As a manufacturer, I have been using Logisti-k.us for my shipping needs for over a year. Their services are reliable and cost-effective.</p>
+        <p>Our warehouses in Miami and Lima ensure your cargo moves fast and safely across borders.</p>
+      </div>
 
-    <!-- JS -->
-    <script>
-        let currentNumber = 1001;
+      <!-- Columna derecha: tarjeta con el form -->
+      <div class="signup-card">
+        <h2>Sign Up Now!</h2>
+        <form id="signupForm" autocomplete="off">
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" name="fname" required>
 
-        document.getElementById('signupForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" name="lname" required>
 
-            const year = new Date().getFullYear().toString().slice(-2); // "25"
-            const casillero = `LTK${year}${currentNumber}`;
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
 
-            document.getElementById('casilleroResult').textContent = `Your Casillero Number: ${casillero}`;
-            currentNumber++;
+          <label for="weight">Cargo Weight:</label>
+          <div class="radio-group">
+            <label><input type="radio" name="weight" value="less" required> Less than 150kg</label>
+            <label><input type="radio" name="weight" value="more"> More than 150kg</label>
+            <label><input type="radio" name="weight" value="other"> Other</label>
+          </div>
 
-            this.reset(); // optional: clear form
-        });
+          <button type="submit" class="button">Submit</button>
+        </form>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
+        <div id="casilleroResult" style="margin-top: 12px; font-size: 1.05rem; font-weight: 700;"></div>
+        <div id="nextPreview" style="margin-top: 6px; font-size: .95rem; opacity:.8;"></div>
+      </div>
+    </div>
+  </section>
 
-        document.querySelectorAll('.card').forEach(card => {
-            observer.observe(card);
-        });
-    </script>
+  <!-- Footer -->
+  <footer>
+    <p>Logisti-k Freight Services — Miami FL | Peru | All Rights Reserved</p>
+  </footer>
+
+  <!-- ===== JS: Casillero con localStorage y reinicio anual ===== -->
+  <script>
+    // Claves de almacenamiento
+    const STORAGE_YEAR = 'lk_year';
+    const STORAGE_COUNTER = 'lk_counter';
+    const START_COUNTER = 1001;
+
+    // Cargar estado desde localStorage (si existe)
+    function loadState() {
+      const y = parseInt(localStorage.getItem(STORAGE_YEAR), 10);
+      const c = parseInt(localStorage.getItem(STORAGE_COUNTER), 10);
+      if (Number.isNaN(y) || Number.isNaN(c)) return null;
+      return { year: y, counter: c };
+    }
+
+    // Guardar estado en localStorage
+    function saveState(year, counter) {
+      localStorage.setItem(STORAGE_YEAR, String(year));
+      localStorage.setItem(STORAGE_COUNTER, String(counter));
+    }
+
+    // Inicializar estado al cargar la página
+    function initState() {
+      const nowYear = new Date().getFullYear();
+      const state = loadState();
+      if (!state || state.year !== nowYear) {
+        // Año nuevo o no había estado -> reiniciar contador
+        saveState(nowYear, START_COUNTER);
+        return { year: nowYear, counter: START_COUNTER };
+      }
+      return state;
+    }
+
+    // Formatear casillero: LTK + últimos 2 dígitos del año + contador
+    function formatCasillero(year, counter) {
+      const shortYear = String(year).slice(-2); // "25", "26", ...
+      return `LTK${shortYear}${counter}`;
+    }
+
+    // Mostrar "siguiente casillero" como vista previa
+    function updatePreview() {
+      const state = initState(); // asegura estado correcto vs año
+      const preview = formatCasillero(state.year, state.counter);
+      const el = document.getElementById('nextPreview');
+      if (el) el.textContent = `Next casillero: ${preview}`;
+    }
+
+    // --- Main ---
+    let state = initState();        // { year, counter }
+    updatePreview();
+
+    // Listener del formulario
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Revalidar año por si cambió entre cargas (poco probable, pero seguro)
+      const nowYear = new Date().getFullYear();
+      state = loadState() || { year: nowYear, counter: START_COUNTER };
+
+      if (nowYear !== state.year) {
+        state.year = nowYear;
+        state.counter = START_COUNTER;
+      }
+
+      // Generar casillero para este registro
+      const casillero = formatCasillero(state.year, state.counter);
+
+      // Mostrar al usuario
+      document.getElementById('casilleroResult').textContent =
+        `Your Casillero Number: ${casillero}`;
+
+      // Incrementar y persistir para el siguiente
+      state.counter += 1;
+      saveState(state.year, state.counter);
+
+      // Limpiar el form y refrescar la vista previa
+      this.reset();
+      updatePreview();
+    });
+  </script>
 </body>
-
 </html>
