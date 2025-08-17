@@ -1,5 +1,6 @@
-
-/* GENERAL */
+/* =========================
+   GENERAL
+========================= */
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -10,7 +11,10 @@ body {
   padding: 0;
   background: #ffffff;
 }
-/* NAVBAR */
+
+/* =========================
+   NAVBAR
+========================= */
 nav {
   background-color: #c9301f;
   display: flex;
@@ -31,7 +35,10 @@ nav a:hover {
   text-decoration: underline;
   color: #ffeeba;
 }
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 .hero {
   background-image: url('logistic.png');
   background-size: cover;
@@ -70,7 +77,10 @@ nav a:hover {
   color: #eeeeee;
   text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
 }
-/* CONTAINER & CARDS */
+
+/* =========================
+   CONTAINER & CARDS
+========================= */
 .container {
   display: flex;
   flex-direction: column;
@@ -93,7 +103,10 @@ nav a:hover {
   opacity: 1;
   transform: translateY(0);
 }
-/* BUTTON */
+
+/* =========================
+   BUTTON
+========================= */
 .button {
   background-color: #e21f05;
   color: white;
@@ -103,12 +116,18 @@ nav a:hover {
   border-radius: 5px;
   cursor: pointer;
 }
-/* IMAGES */
+
+/* =========================
+   IMAGES
+========================= */
 img {
   width: 100%;
   border-radius: 5px;
 }
-/* FORMS */
+
+/* =========================
+   FORMS (genéricos)
+========================= */
 form input,
 form button {
   width: 100%;
@@ -117,14 +136,20 @@ form button {
   margin-bottom: 15px;
   font-size: 1rem;
 }
-/* FOOTER */
+
+/* =========================
+   FOOTER (fondo)
+========================= */
 footer {
   background-color: #da2b18;
   color: white;
   text-align: center;
   padding: 20px;
 }
-/* ABOUT US SECTION */
+
+/* =========================
+   ABOUT US SECTION
+========================= */
 .about-card {
   width: 100%;
   padding: 60px 40px;
@@ -157,7 +182,10 @@ footer {
   line-height: 1.7;
   text-align: justify;
 }
-/* RESPONSIVE */
+
+/* =========================
+   RESPONSIVE global
+========================= */
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
@@ -169,5 +197,52 @@ footer {
   }
   .about-text {
     padding-top: 20px;
+  }
+}
+
+/* ==========================================================
+   *** FOOTER ROJO: layout de dos columnas (texto + formulario)
+   Importante: los selectores usan data-attributes de Wix/EditorX
+   y los IDs exactos que aparecen en tu captura.
+   Si el builder cambia los IDs (#comp-...), actualízalos aquí.
+========================================================== */
+
+/* Contenedor interno del footer en modo fila */
+[data-mesh-id="SITE_FOOTERinlineContent"]
+  [data-mesh-id="SITE_FOOTERinlineContent-gridContainer"] {
+  display: flex !important;
+  justify-content: space-between !important; /* separa texto y form */
+  align-items: flex-start !important;        /* alinea arriba */
+  flex-wrap: wrap !important;                /* se apila en móvil */
+  gap: 40px !important;
+  padding: 40px !important;
+}
+
+/* Columna izquierda (testimonios / direcciones) */
+#comp-m0684gfu {
+  flex: 1 1 auto !important;
+  min-width: 280px !important;
+}
+
+/* Columna derecha (FORM: tarjeta a la derecha) */
+#comp-m0684gf5 {
+  flex: 0 0 380px !important;   /* ancho fijo del form */
+  max-width: 100% !important;
+  background: #fff !important;
+  color: #111 !important;
+  padding: 20px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,.15) !important;
+}
+
+/* Responsive: apilar y centrar el form en pantallas chicas */
+@media (max-width: 900px){
+  [data-mesh-id="SITE_FOOTERinlineContent"]
+    [data-mesh-id="SITE_FOOTERinlineContent-gridContainer"]{
+    flex-direction: column !important;
+  }
+  #comp-m0684gf5{
+    width: 100% !important;
+    margin: 0 auto !important;
   }
 }
