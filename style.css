@@ -264,11 +264,13 @@ footer {
 
 .signup-card .radio-item {
   display: flex;
-  align-items: center;
+  align-items: center;       /* centra verticalmente */
   gap: 10px;
   font-size: 1rem;
   color: #111;
+  line-height: 1.5;          /* asegura buen espaciado vertical */
 }
+
 
 
 .signup-card .radio-group label {
