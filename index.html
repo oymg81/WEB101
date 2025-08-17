@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Logisti-K Freight Innovation Day</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logisti-K Freight Innovation Day</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -62,7 +62,7 @@
         <div id="alert" class="alert"></div>
         <h2>Sign Up Now!</h2>
 
-        <form id="signupForm" autocomplete="off">
+        <form id="signupForm" autocomplete="off" novalidate>
           <label for="fname">First Name:</label>
           <input id="fname" name="fname" required />
 
@@ -88,7 +88,7 @@
             </div>
           </div>
 
-          <button class="button" type="submit">Submit</button>
+          <button class="button" id="submitBtn" type="submit">Submit</button>
         </form>
 
         <div id="casilleroResult"></div>
@@ -101,80 +101,7 @@
     <p>Logisti-K Freight Services — Miami FL | Peru | All Rights Reserved</p>
   </footer>
 
-<script>
-/* ====== Casillero con localStorage: LTKYY1001 y reinicio anual ====== */
-const STORAGE_YEAR = 'lk_year';
-const STORAGE_COUNTER = 'lk_counter';
-const START_COUNTER = 1001;
-
-function loadState(){
-  const y = parseInt(localStorage.getItem(STORAGE_YEAR),10);
-  const c = parseInt(localStorage.getItem(STORAGE_COUNTER),10);
-  if(Number.isNaN(y) || Number.isNaN(c)) return null;
-  return {year:y, counter:c};
-}
-function saveState(year, counter){
-  localStorage.setItem(STORAGE_YEAR, String(year));
-  localStorage.setItem(STORAGE_COUNTER, String(counter));
-}
-function initState(){
-  const nowYear = new Date().getFullYear();
-  const st = loadState();
-  if(!st || st.year !== nowYear){
-    saveState(nowYear, START_COUNTER);
-    return {year: nowYear, counter: START_COUNTER};
-  }
-  return st;
-}
-function formatCasillero(year, counter){
-  const yy = String(year).slice(-2);
-  return `LTK${yy}${counter}`;
-}
-function updatePreview(){
-  const st = initState();
-  const el = document.getElementById('nextPreview');
-  if(el) el.textContent = `Next casillero: ${formatCasillero(st.year, st.counter)}`;
-}
-
-/* ====== Alertas ====== */
-const alertBox = document.getElementById("alert");
-function showAlert(type, text) {
-  alertBox.className = "alert " + (type === "success" ? "alert-success" : "alert-error");
-  alertBox.textContent = text;
-  alertBox.style.display = "block";
-  setTimeout(() => { alertBox.style.display = "none"; }, 5000);
-}
-
-/* ====== Lógica del formulario ====== */
-let state = initState();
-updatePreview();
-
-document.getElementById('signupForm').addEventListener('submit', function(e){
-  e.preventDefault();
-
-  const fname = document.getElementById("fname").value.trim();
-  const lname = document.getElementById("lname").value.trim();
-  const email = document.getElementById("email").value.trim();
-
-  if (!fname || !lname || !email) {
-    showAlert("error", "Por favor completa todos los campos obligatorios.");
-    return;
-  }
-
-  const nowYear = new Date().getFullYear();
-  state = loadState() || {year: nowYear, counter: START_COUNTER};
-  if(nowYear !== state.year){ state.year = nowYear; state.counter = START_COUNTER; }
-
-  const casillero = formatCasillero(state.year, state.counter);
-  document.getElementById('casilleroResult').textContent = `Your Casillero Number: ${casillero}`;
-  showAlert("success", `¡Registro exitoso! Tu casillero es ${casillero}.`);
-
-  state.counter += 1;
-  saveState(state.year, state.counter);
-
-  this.reset();
-  updatePreview();
-});
-</script>
+  <!-- JS externo -->
+  <script src="app.js" defer></script>
 </body>
 </html>
