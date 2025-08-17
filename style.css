@@ -262,6 +262,15 @@ footer {
   margin: 10px 0 20px;
 }
 
+.signup-card .radio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #111;
+}
+
+
 .signup-card .radio-group label {
   display: flex;
   align-items: center;
