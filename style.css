@@ -1,11 +1,7 @@
 /* =========================
    GENERAL
 ========================= */
-* {
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-}
-
+* { scroll-behavior: smooth; box-sizing: border-box; }
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -27,18 +23,8 @@ nav {
   top: 0;
   z-index: 100;
 }
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-  color: #ffeeba;
-}
+nav a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: bold; }
+nav a:hover { text-decoration: underline; color: #ffeeba; }
 
 /* =========================
    HERO
@@ -49,9 +35,8 @@ nav a:hover {
   background-position: center;
   height: 400px;
   position: relative;
-  background-color: #da2b18;
+  background-color: #da2b18; /* fallback */
 }
-
 .hero::before {
   content: "";
   position: absolute;
@@ -59,39 +44,14 @@ nav a:hover {
   background-color: rgba(93, 89, 89, 0.6);
   z-index: 1;
 }
-
-.hero-overlay {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 0;
-}
-
-.hero h1 {
-  font-size: 5rem;
-  margin: 0;
-  color: #da2b18;
-  font-weight: bold;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.hero h2 {
-  font-size: 3rem;
-  margin: 10px 0 0;
-  color: #eeeeee;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-}
+.hero-overlay { position: relative; z-index: 2; text-align: center; padding: 0; }
+.hero h1 { font-size: 5rem; margin: 0; color: #da2b18; font-weight: bold; text-shadow: 2px 2px 8px rgba(0,0,0,.5); }
+.hero h2 { font-size: 3rem; margin: 10px 0 0; color: #eee; text-shadow: 1px 1px 6px rgba(0,0,0,.4); }
 
 /* =========================
    CONTAINER & CARDS
 ========================= */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-}
-
+.container { display: flex; flex-direction: column; align-items: center; padding: 40px; }
 .card {
   background: #f4f4f4;
   padding: 25px;
@@ -99,40 +59,24 @@ nav a:hover {
   width: 80%;
   max-width: 1200px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  opacity: 1;
-  transform: none;
-  transition: all 0.6s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+  opacity: 1; transform: none; transition: all .6s ease-in-out;
 }
 
 /* =========================
    BUTTON
 ========================= */
-.button {
-  background-color: #da2b18;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  text-decoration: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.button:hover {
-  filter: brightness(1.1);
-}
+.button { background-color: #da2b18; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+.button:hover { filter: brightness(1.1); }
 
 /* =========================
    IMAGES
 ========================= */
-img {
-  width: 100%;
-  border-radius: 5px;
-  object-fit: cover;
-}
+img { width: 100%; border-radius: 5px; object-fit: cover; }
 
 /* =========================
    FORMS (genéricos)
+   *Excluimos radios/checkboxes del 100%*
 ========================= */
 form input:not([type="radio"]):not([type="checkbox"]),
 form button,
@@ -148,94 +92,38 @@ form textarea {
 /* =========================
    FOOTER
 ========================= */
-footer {
-  background-color: #da2b18;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
+footer { background-color: #da2b18; color: #fff; text-align: center; padding: 20px; }
 
 /* =========================
    ABOUT US
 ========================= */
-.about-card {
-  width: 100%;
-  padding: 60px 40px;
-  background-color: #fff;
-  box-sizing: border-box;
-}
-
-.about-card h2 {
-  font-size: 2.5rem;
-  color: #da2b18;
-  margin-bottom: 40px;
-}
-
-.about-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.about-content img {
-  width: 50%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.about-text {
-  flex: 1;
-  color: #da2b18;
-  font-size: 1rem;
-  line-height: 1.7;
-  text-align: justify;
-}
+.about-card { width: 100%; padding: 60px 40px; background: #fff; box-sizing: border-box; }
+.about-card h2 { font-size: 2.5rem; color: #da2b18; margin-bottom: 40px; }
+.about-content { display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
+.about-content img { width: 50%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+.about-text { flex: 1; color: #da2b18; font-size: 1rem; line-height: 1.7; text-align: justify; }
 
 /* =========================
    SIGNUP SECTION
 ========================= */
-.signup-section {
-  background: #da2b18;
-  color: #fff;
-  padding: 60px 40px;
-}
-
+.signup-section { background: #da2b18; color: #fff; padding: 60px 40px; }
 .signup-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  flex-wrap: wrap;
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 40px; flex-wrap: wrap;
 }
+.signup-text { flex: 1 1 500px; min-width: 280px; font-size: 1rem; line-height: 1.6; }
 
-.signup-text {
-  flex: 1 1 500px;
-  min-width: 280px;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
+/* Tarjeta del form */
 .signup-card {
   flex: 0 0 380px;
-  background: #fff;
-  color: #111;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: #fff; color: #111;
+  padding: 24px; border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
 }
+.signup-card h2 { margin-top: 0; color: #111; }
 
-.signup-card h2 {
-  margin-top: 0;
-  color: #111;
-}
-
-/* Campos input */
+/* Campos (excluye radios/checkboxes) */
 .signup-card input:not([type="radio"]):not([type="checkbox"]),
 .signup-card select,
 .signup-card textarea {
@@ -244,98 +132,37 @@ footer {
   padding: 10px;
   margin: 10px 0 15px;
   border: 2px solid #da2b18;
-  border-radius: 9999px;
-  outline: none;
-  background: #fff;
+  border-radius: 9999px; /* pill */
+  outline: none; background: #fff;
+}
+.signup-card textarea { border-radius: 16px; height: 120px; }
+
+/* Estados de focus accesibles */
+.signup-card input:focus,
+.signup-card select:focus,
+.signup-card textarea:focus {
+  border-color: #b9220f;
+  box-shadow: 0 0 0 3px rgba(218,43,24,.15);
 }
 
-.signup-card textarea {
-  border-radius: 16px;
-  height: 120px;
-}
-
-/* Radio buttons */
-.signup-card .radio-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 10px 0 20px;
-}
-
-.signup-card .radio-item {
-  display: flex;
-  align-items: center;       /* centra verticalmente */
-  gap: 10px;
-  font-size: 1rem;
-  color: #111;
-  line-height: 1.5;          /* asegura buen espaciado vertical */
-}
-
-
-
-.signup-card .radio-group label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  line-height: 1.2;
-  font-size: 1rem;
-}
-
-.signup-card input[type="radio"] {
-  accent-color: #da2b18;
-  margin: 0;
-  width: auto;
-}
+/* Radios */
+.signup-card .radio-group { display: flex; flex-direction: column; gap: 10px; margin: 10px 0 20px; }
+.signup-card .radio-item { display: flex; align-items: center; gap: 10px; line-height: 1.4; }
+.signup-card input[type="radio"] { accent-color: #da2b18; margin: 0; width: auto; }
 
 /* Botón dentro del formulario */
 .signup-card .button {
-  width: 100%;
-  border: none;
-  border-radius: 9999px;
-  background: #da2b18;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
+  width: 100%; border: none; border-radius: 9999px;
+  background: #da2b18; color: #fff; font-weight: 600; cursor: pointer;
 }
-
-.signup-card .button:hover {
-  filter: brightness(1.05);
-}
+.signup-card .button:hover { filter: brightness(1.05); }
 
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
-  .signup-container {
-    flex-direction: column;
-  }
-
-  .signup-card {
-    width: 100%;
-    max-width: 480px;
-    margin: 20px auto 0;
-  }
-
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-content img,
-  .about-text {
-    width: 100%;
-  }
-}
-
-
-.radio-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.radio-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  .signup-container { flex-direction: column; }
+  .signup-card { width: 100%; max-width: 480px; margin: 20px auto 0; }
+  .about-content { flex-direction: column; text-align: center; }
+  .about-content img, .about-text { width: 100%; }
 }
