@@ -48,21 +48,36 @@ nav a:hover {
   color: white;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* opacidad ajustable */
+  z-index: 1;
+}
+
+
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 2);
-  padding: 30px 50px;
+  background-color: rgba(0, 0, 0, 0.85); /* fondo oscuro */
+  padding: 50px 80px;                   /* más grande */
   text-align: center;
   border-radius: 10px;
+  max-width: 800px;                     /* opcional: limita ancho */
+  width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 4rem;  /* antes era 3rem */
   margin: 0;
   color: #f44336;
 }
 
 .hero h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;  /* antes era 2rem */
   margin: 0;
   color: #eeeeee;
 }
