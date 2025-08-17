@@ -246,3 +246,103 @@ footer {
     margin: 0 auto !important;
   }
 }
+
+/* ====== FONDO ROJO DEL BLOQUE ====== */
+#SITE_FOOTER,
+[data-mesh-id="SITE_FOOTERinlineContent"]{
+  background:#c9301f !important; /* rojo de marca */
+}
+
+/* Altura cómoda del bloque rojo */
+[data-mesh-id="SITE_FOOTERinlineContent"]
+  [data-mesh-id="SITE_FOOTERinlineContent-gridContainer"]{
+  min-height: 560px !important;   /* ajusta si necesitas más/menos alto */
+}
+
+/* ====== LAYOUT: texto izq + form der ====== */
+[data-mesh-id="SITE_FOOTERinlineContent"]
+  [data-mesh-id="SITE_FOOTERinlineContent-gridContainer"]{
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:flex-start !important;
+  gap:40px !important;
+  padding:48px 40px !important;
+  flex-wrap:wrap !important;      /* apila en móvil */
+}
+
+/* Columna izquierda (texto/testimonios/direcciones) */
+#comp-m0684gfu{
+  flex:1 1 auto !important;
+  min-width:280px !important;
+  color:#fff !important;
+}
+
+/* ====== TARJETA DEL FORM PEQUEÑA ====== */
+/* IMPORTANTE: si el ID del form cambia en tu editor, reemplaza #comp-m0684gf5 por el nuevo ID */
+#comp-m0684gf5{
+  flex:0 0 420px !important;   /* ancho fijo tipo "card" */
+  width:420px !important;
+  max-width:100% !important;
+  background:#fff !important;
+  color:#111 !important;
+  padding:28px !important;
+  border-radius:16px !important;
+  box-shadow:0 14px 40px rgba(0,0,0,.18) !important;
+}
+
+/* Títulos del form en color marca */
+#comp-m0684gf5 :is(h1,h2,h3){
+  color:#c9301f !important;
+  letter-spacing:.5px;
+  margin-top:0;
+}
+
+/* ====== ESTILO COMPACTO DE CAMPOS ====== */
+#comp-m0684gf5 input[type="text"],
+#comp-m0684gf5 input[type="email"],
+#comp-m0684gf5 input[type="tel"],
+#comp-m0684gf5 select,
+#comp-m0684gf5 textarea{
+  height:42px !important;
+  padding:8px 14px !important;
+  border:2px solid #e24a2b !important;
+  border-radius:9999px !important;     /* pill */
+  outline:none !important;
+  box-shadow:none !important;
+}
+
+/* Radios/checkbox en línea compactos (opcional) */
+#comp-m0684gf5 .radiogroup,
+#comp-m0684gf5 .checkboxgroup{
+  display:grid !important;
+  gap:8px !important;
+}
+
+/* Botón */
+#comp-m0684gf5 button,
+#comp-m0684gf5 input[type="submit"]{
+  height:44px !important;
+  border:none !important;
+  border-radius:9999px !important;
+  background:#c9301f !important;
+  color:#fff !important;
+  font-weight:600;
+  cursor:pointer;
+}
+#comp-m0684gf5 button:hover,
+#comp-m0684gf5 input[type="submit"]:hover{
+  filter:brightness(1.05);
+}
+
+/* ====== Responsive: apilar y centrar el form en móvil ====== */
+@media (max-width: 900px){
+  [data-mesh-id="SITE_FOOTERinlineContent"]
+    [data-mesh-id="SITE_FOOTERinlineContent-gridContainer"]{
+    flex-direction:column !important;
+  }
+  #comp-m0684gf5{
+    width:100% !important;
+    max-width:480px !important;
+    margin:0 auto !important;
+  }
+}
