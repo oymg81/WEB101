@@ -145,10 +145,34 @@ footer { background-color: #da2b18; color: #fff; text-align: center; padding: 20
   box-shadow: 0 0 0 3px rgba(218,43,24,.15);
 }
 
-/* Radios */
-.signup-card .radio-group { display: flex; flex-direction: column; gap: 10px; margin: 10px 0 20px; }
-.signup-card .radio-item { display: flex; align-items: center; gap: 10px; line-height: 1.4; }
-.signup-card input[type="radio"] { accent-color: #da2b18; margin: 0; width: auto; }
+/* === Radios: alineación exacta (columna fija para el círculo) === */
+.signup-card .radio-group{
+  margin: 12px 0 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.signup-card .radio-item{
+  display: grid;
+  grid-template-columns: 18px 1fr; /* 18px para el radio, resto para el texto */
+  align-items: center;             /* centra verticalmente */
+  column-gap: 10px;
+}
+
+.signup-card .radio-item input[type="radio"]{
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  align-self: center;
+  accent-color: #da2b18;
+  vertical-align: middle;
+}
+
+.signup-card .radio-item label{
+  margin: 0;
+  line-height: 1.2;
+}
+
 
 /* Botón dentro del formulario */
 .signup-card .button {
