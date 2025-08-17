@@ -332,10 +332,20 @@
 
                     <label for="weight">Cargo Weight:</label>
                     <div class="radio-group">
-                        <label><input type="radio" name="weight" value="less" required> Less than 150kg</label>
-                        <label><input type="radio" name="weight" value="more"> More than 150kg</label>
-                        <label><input type="radio" name="weight" value="other"> Other</label>
+                        <div class="radio-item">
+                            <input type="radio" id="weight-less" name="weight" value="less" required>
+                            <label for="weight-less">Less than 150kg</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="weight-more" name="weight" value="more">
+                            <label for="weight-more">More than 150kg</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="weight-other" name="weight" value="other">
+                            <label for="weight-other">Other</label>
+                        </div>
                     </div>
+
 
                     <button type="submit" class="button">Submit</button>
                 </form>

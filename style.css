@@ -315,3 +315,16 @@ footer {
     width: 100%;
   }
 }
+
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
