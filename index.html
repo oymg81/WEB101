@@ -146,42 +146,52 @@ footer{ background:#da2b18; color:#fff; text-align:center; padding:20px; }
     </div>
   </div>
 
-  <!-- SIGNUP (franja roja) -->
-  <section class="signup-section" id="signup">
-    <div class="signup-container">
-      <div class="signup-text">
-        <h3>Why Join Us?</h3>
-        <p>As a manufacturer, I have been using Logisti-k.us for my shipping needs for over a year. Their services are reliable and cost-effective.</p>
-        <p>Our warehouses in Miami and Lima ensure your cargo moves fast and safely across borders.</p>
-      </div>
-
-      <div class="signup-card">
-        <h2>Sign Up Now!</h2>
-        <form id="signupForm" autocomplete="off">
-          <label for="fname">First Name:</label>
-          <input type="text" id="fname" name="fname" required/>
-
-          <label for="lname">Last Name:</label>
-          <input type="text" id="lname" name="lname" required/>
-
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required/>
-
-          <label for="weight">Cargo Weight:</label>
-          <div class="radio-group">
-            <label><input type="radio" name="weight" value="less" required/> Less than 150kg</label>
-            <label><input type="radio" name="weight" value="more"/> More than 150kg</label>
-            <label><input type="radio" name="weight" value="other"/> Other</label>
-          </div>
-
-          <button type="submit" class="button">Submit</button>
-        </form>
-
-        <div id="casilleroResult"></div>
-        <div id="nextPreview"></div>
-      </div>
+<!-- SIGNUP (franja roja) -->
+<section class="signup-section" id="signup">
+  <div class="signup-container">
+    
+    <!-- Lado izquierdo: texto promocional -->
+    <div class="signup-text">
+      <h3>Why Join Us?</h3>
+      <p>
+        As a manufacturer, I have been using Logisti-k.us for my shipping needs for over a year.
+        Their services are reliable and cost-effective.
+      </p>
+      <p>
+        Our warehouses in Miami and Lima ensure your cargo moves fast and safely across borders.
+      </p>
     </div>
-  </section>
+
+    <!-- Lado derecho: formulario -->
+    <div class="signup-card">
+      <h2>Sign Up Now!</h2>
+
+      <form id="signupForm" autocomplete="off">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname" required aria-label="First Name" />
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname" required aria-label="Last Name" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required aria-label="Email Address" />
+
+        <label>Cargo Weight:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="weight" value="less" required /> Less than 150kg</label>
+          <label><input type="radio" name="weight" value="more" /> More than 150kg</label>
+          <label><input type="radio" name="weight" value="other" /> Other</label>
+        </div>
+
+        <button type="submit" class="button">Submit</button>
+      </form>
+
+      <!-- Resultados del casillero generado -->
+      <div id="casilleroResult" style="margin-top: 15px; font-weight: bold;"></div>
+      <div id="nextPreview" style="margin-top: 5px; font-size: 0.9rem; color: #fff;"></div>
+    </div>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer>
