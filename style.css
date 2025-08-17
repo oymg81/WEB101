@@ -426,3 +426,40 @@ footer {
     margin: 20px auto 0;
   }
 }
+
+/* 1) Evitar que radios/checkboxes hereden width:100% */
+form input[type="radio"],
+form input[type="checkbox"]{
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-block;
+}
+
+/* 2) Alinear texto y círculo en una misma línea */
+.signup-card .radio-group label{
+  display: flex;
+  align-items: center;
+  gap: 8px;          /* espacio entre el círculo y el texto */
+  line-height: 1.2;
+}
+
+/* 3) Color de marca para radios (navegadores modernos) */
+.signup-card input[type="radio"]{
+  accent-color: #c9301f;
+}
+
+/* (Opcional) Si quieres que las tres opciones queden en columna fija */
+.signup-card .radio-group{
+  display: grid;
+  gap: 8px;
+}
+
+/* (Opcional) Si las prefieres en dos columnas, usa este en lugar del de arriba */
+/*
+.signup-card .radio-group{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+*/
