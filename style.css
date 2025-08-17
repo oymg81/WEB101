@@ -250,7 +250,7 @@ footer {
 /* ====== FONDO ROJO DEL BLOQUE ====== */
 #SITE_FOOTER,
 [data-mesh-id="SITE_FOOTERinlineContent"]{
-  background:#c9301f !important; /* rojo de marca */
+  background:#e24a2b !important; /* rojo de marca */
 }
 
 /* Altura cómoda del bloque rojo */
@@ -292,7 +292,7 @@ footer {
 
 /* Títulos del form en color marca */
 #comp-m0684gf5 :is(h1,h2,h3){
-  color:#c9301f !important;
+  color:#e24a2b !important;
   letter-spacing:.5px;
   margin-top:0;
 }
@@ -324,7 +324,7 @@ footer {
   height:44px !important;
   border:none !important;
   border-radius:9999px !important;
-  background:#c9301f !important;
+  background:#e24a2b !important;
   color:#fff !important;
   font-weight:600;
   cursor:pointer;
@@ -349,7 +349,7 @@ footer {
 
 /* ====== SIGNUP SECTION ====== */
 .signup-section {
-  background: #c9301f; /* rojo de marca */
+  background: #e24a2b; /* rojo de marca */
   color: #fff;
   padding: 60px 40px;
 }
