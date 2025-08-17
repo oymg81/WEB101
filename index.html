@@ -63,28 +63,42 @@
     </div> <!-- End of .container -->
 
     <!-- Sign Up Form -->
-    <div class="signup" id="signup">
-        <h2>Sign Up Now!</h2>
-        <form id="signupForm">
-            <label for="fname">First Name:</label>
-            <input type="text" id="fname" name="fname" required>
-
-            <label for="lname">Last Name:</label>
-            <input type="text" id="lname" name="lname" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="weight">Cargo Weight:</label><br>
-            <input type="radio" name="weight" value="less" required /> Less than 150kg<br>
-            <input type="radio" name="weight" value="more" /> More than 150kg<br>
-            <input type="radio" name="weight" value="other" /> Other<br><br>
-
-            <button type="submit" class="button">Submit</button>
-        </form>
-
-        <div id="casilleroResult" style="margin-top: 20px; font-size: 1.2rem; font-weight: bold;"></div>
+    <!-- Sign Up Section -->
+<section class="signup-section" id="signup">
+  <div class="signup-container">
+    <!-- Columna izquierda: testimonios / dirección -->
+    <div class="signup-text">
+      <h3>Why Join Us?</h3>
+      <p>As a manufacturer, I have been using Logisti-k.us for my shipping needs for over a year. Their services are reliable and cost-effective.</p>
+      <p>Our warehouses in Miami and Lima ensure your cargo moves fast and safely across borders.</p>
     </div>
+
+    <!-- Columna derecha: tarjeta con el form -->
+    <div class="signup-card">
+      <h2>Sign Up Now!</h2>
+      <form id="signupForm">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname" required>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="weight">Cargo Weight:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="weight" value="less" required> Less than 150kg</label>
+          <label><input type="radio" name="weight" value="more"> More than 150kg</label>
+          <label><input type="radio" name="weight" value="other"> Other</label>
+        </div>
+
+        <button type="submit" class="button">Submit</button>
+      </form>
+      <div id="casilleroResult"></div>
+    </div>
+  </div>
+</section>
 
     <!-- Footer -->
     <footer>

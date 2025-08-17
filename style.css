@@ -346,3 +346,83 @@ footer {
     margin:0 auto !important;
   }
 }
+
+/* ====== SIGNUP SECTION ====== */
+.signup-section {
+  background: #c9301f; /* rojo de marca */
+  color: #fff;
+  padding: 60px 40px;
+}
+
+.signup-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap; /* apila en móvil */
+}
+
+/* Columna izquierda (texto) */
+.signup-text {
+  flex: 1 1 500px;
+  min-width: 280px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Tarjeta del form */
+.signup-card {
+  flex: 0 0 380px;
+  background: #fff;
+  color: #111;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+/* Estilo de campos */
+.signup-card input,
+.signup-card button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 15px;
+  font-size: 1rem;
+}
+
+.signup-card input {
+  border: 2px solid #e24a2b;
+  border-radius: 9999px; /* pill style */
+}
+
+.signup-card .radio-group {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+/* Botón */
+.signup-card .button {
+  border: none;
+  border-radius: 9999px;
+  background: #c9301f;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.signup-card .button:hover {
+  filter: brightness(1.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .signup-container {
+    flex-direction: column;
+  }
+  .signup-card {
+    width: 100%;
+    max-width: 480px;
+    margin: 20px auto 0;
+  }
+}
